@@ -1,0 +1,40 @@
+{
+  "name": "performance-reporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "watch": {
+    "build-typescript": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts",
+      "quiet": false
+    },
+    "run-built": {
+      "patterns": [
+        "built"
+      ],
+      "extensions": "js,json"
+    }
+  },
+  "scripts": {
+    "start": "concurrently \"npm run watch-typescript\" \"npm run watch-built\"",
+    "watch-typescript": "npm-watch build-typescript",
+    "build-typescript": "tsc",
+    "watch-built": "npm-watch run-built",
+    "run-built": "node ./built/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Connor Campbell",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-ts": "^6.0.0-beta.17",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "npm-watch": "^0.3.0",
+    "soap": "^0.23.0"
+  }
+}

@@ -1,0 +1,6 @@
+# all secrets 
+src/secrets.ts
+#built directory
+built
+#node_moduless
+node_modules
