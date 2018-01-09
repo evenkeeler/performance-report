@@ -1,10 +1,19 @@
 import { SOAP_CREDENTIALS } from './secrets'
-var Buffer;
+import { Client } from 'soap'
 
 import { 
+  createCC1Client,
   createCC1Endpoint,
-  createCC1Client
+  getCriticalInformationByEndpoint
 } from './utilities/soapUtilities'
 
-
-createCC1Client();
+async function getDailyRecords() {
+  try {
+    const client = await createCC1Client()
+    getCriticalInformationByEndpoint(client, createCC1Endpoint('INFO0076'))
+  } catch(e) {
+    console.log('in get daily records catch')
+  }
+}
+ getDailyRecords();
+  

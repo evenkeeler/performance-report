@@ -29,6 +29,7 @@
   "author": "Connor Campbell",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^8.5.7",
     "grunt": "^1.0.1",
     "grunt-ts": "^6.0.0-beta.17",
     "typescript": "^2.6.2"
