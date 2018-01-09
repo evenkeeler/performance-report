@@ -16,6 +16,7 @@ const createCC1Client = (): Promise<Client> =>
         if (err) {
           reject(err)
         } else {
+          client.setSecurity(new BasicAuthSecurity(username, password))
           resolve(client)
         }
       })
